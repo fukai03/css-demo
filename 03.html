@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css变量</title>
+</head>
+<body>
+    <h1>css变量</h1>
+
+    <div class="container" style="--primary-font: 'Courier New'">
+        <h1>scope variate</h1>
+    </div>
+    <h1>after container</h1>
+    <button onclick="changeVar()">changeVar</button>
+    <style>
+        :root {
+            --primary-color: red;
+        }
+        .container {
+            --primary-color: blue;
+            font-family: var(--primary-font);
+        }
+        h1 {
+            color: var(--primary-color);
+            
+        }
+
+    </style>
+
+    <script>
+        function changeVar() {
+            const el = document.getElementsByClassName('container');
+            console.log(el);
+            el[0].style.setProperty('--primary-color', 'green')
+        }
+    </script>
+    
+</body>
+</html>

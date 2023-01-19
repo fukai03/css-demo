@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>backdrop-filter</title>
+</head>
+<body>
+     <!-- sd  -->
+    <div class="box1">
+        <div class="text1">backdrop-filter</div>
+    </div>
+    <div class="box1 box2">
+        <img src="./assets/image1.png" alt="" srcset="">
+    </div>
+    
+</body>
+<style>
+    /* css */
+    .box1 {
+        width: 400px;
+        height: 400px;
+        background-image: url('./assets/image1.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .text1 {
+        width: 200px;
+        height: 100px;
+        background: rgba(255, 255, 255, .3);
+        text-align: center;
+        line-height: 100px;
+        backdrop-filter: blur(10px);
+        border-radius: 10px;
+    }
+    .box2 img{
+        width: 300px;
+        z-index: 1;
+    }
+    .box2 {
+        position: relative;
+    }
+    .box2::after {
+        backdrop-filter: blur(10px);
+        content: '';
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: absolute;
+        z-index: 0;
+    }
+</style>
+</html>
