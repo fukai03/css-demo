@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* .box {
+            width: 300px;
+            height: 100px;
+            color: red;
+            background: currentColor;
+            text-align: center;
+        }
+        .txt{
+            line-height: 100px;
+            font-size: 30px;
+            filter: grayscale(1) contrast(9999) invert(1);
+        } */
+      /* html,
+      body {
+        margin: 0;
+        height: 100%;
+        display: grid;
+        place-content: center;
+        gap: 10px;
+        background: aliceblue;
+      } */
+      .box {
+        display: grid;
+        place-content: center;
+        width: 300px;
+        height: 150px;
+        font-size: 32px;
+        color: #ffeb3b;
+        background-color: currentColor;
+      }
+      .txt {
+        filter: grayscale(1) contrast(9999) invert(1);
+      }
+    </style>
+  </head>
+  <body>
+    
+    <div class="box" id="box">
+      <span class="txt">测试文字颜色自适应</span>
+    </div>
+    <input type="color" onchange="document.getElementById('box').style.color = this.value">
+  </body>
+  <script></script>
+</html>

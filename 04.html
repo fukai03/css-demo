@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: grid;
+        place-content: center;
+        height: 100vh;
+        margin: 0;
+        gap: 15px;
+        background: #f1f1f1;
+        user-select: none;
+      }
+      button {
+        user-select: none;
+      }
+      .throttle {
+        animation: throttle 1s step-end forwards;
+      }
+      .throttle:active {
+        animation: none;
+      }
+      @keyframes throttle {
+        from {
+          pointer-events: none;
+          opacity: 0.65;
+        }
+        to {
+          pointer-events: all;
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>使用css实现函数节流</h1>
+    <button class="throttle" onclick="console.log('点击')">点击</button>
+  </body>
+</html>
